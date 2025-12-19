@@ -7,7 +7,6 @@ import {
   canEquip,
   canInteract,
   getMonsters,
-  getProperty,
   inebrietyLimit,
   itemAmount,
   myInebriety,
@@ -85,16 +84,10 @@ const chooseFamiliar = (options: MenuOptions = {}): Familiar => {
     );
     if (adventuresFamiliar) return adventuresFamiliar;
 
-    if (
-      have($familiar`Li'l Xenomorph`) &&
-      !getProperty("_transponderDrops").localeCompare("5")
-    )
+    if (have($familiar`Li'l Xenomorph`) && get("_transponderDrops") !== 5)
       return $familiar`Li'l Xenomorph`;
 
-    if (
-      have($familiar`Chest Mimic`) &&
-      !getProperty("_mimicEggsObtained").localeCompare("11")
-    )
+    if (have($familiar`Chest Mimic`) && get("_mimicEggsObtained") !== 11)
       return $familiar`Chest Mimic`;
 
     return $familiar`Mini Kiwi`;
