@@ -126,6 +126,9 @@ export default class Macro extends StrictMacro {
     ).externalIf(
       timeToMeatify() && myFamiliar() === $familiar`Grey Goose`,
       Macro.trySkill($skill`Meatify Matter`),
+    ).externalIf(
+      myFamiliar() === $familiar`Chest Mimic`,
+      Macro.tryHaveSkill($skill`%fn, lay an egg`),
     );
   }
 

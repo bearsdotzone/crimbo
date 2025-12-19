@@ -7,6 +7,7 @@ import {
   canEquip,
   canInteract,
   getMonsters,
+  getProperty,
   inebrietyLimit,
   itemAmount,
   myInebriety,
@@ -84,7 +85,13 @@ const chooseFamiliar = (options: MenuOptions = {}): Familiar => {
     );
     if (adventuresFamiliar) return adventuresFamiliar;
 
-    if (have($familiar`Peace Turkey`)) return $familiar`Peace Turkey`;
+    if (have($familiar`Li'l Xenomorph`) && !getProperty("_transponderDrops").localeCompare("5")) return $familiar`Li'l Xenomorph`;
+
+    if (have($familiar`Chest Mimic`) && !getProperty("_mimicEggsObtained").localeCompare("11")) return $familiar`Chest Mimic`;
+
+    return $familiar`Mini Kiwi`;
+
+    // if (have($familiar`Peace Turkey`)) return $familiar`Peace Turkey`;
   }
   return (
     (canInteract() && sober()
