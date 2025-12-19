@@ -22503,8 +22503,8 @@ var chooseFamiliar = function chooseFamiliar() {
     if (have$7() && get$2("_knuckleboneDrops") < 100) return $familiar(_templateObject6$3 || (_templateObject6$3 = _taggedTemplateLiteral(["Skeleton of Crimbo Past"])));
     var adventuresFamiliar = adventuresFamiliars(options.allowEquipment).find(have$18);
     if (adventuresFamiliar) return adventuresFamiliar;
-    if (have$18($familiar(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteral(["Li'l Xenomorph"])))) && !require$$0.getProperty("_transponderDrops").localeCompare("5")) return $familiar(_templateObject8$3 || (_templateObject8$3 = _taggedTemplateLiteral(["Li'l Xenomorph"])));
-    if (have$18($familiar(_templateObject9$3 || (_templateObject9$3 = _taggedTemplateLiteral(["Chest Mimic"])))) && !require$$0.getProperty("_mimicEggsObtained").localeCompare("11")) return $familiar(_templateObject0$3 || (_templateObject0$3 = _taggedTemplateLiteral(["Chest Mimic"])));
+    if (have$18($familiar(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteral(["Li'l Xenomorph"])))) && get$2("_transponderDrops") !== 5) return $familiar(_templateObject8$3 || (_templateObject8$3 = _taggedTemplateLiteral(["Li'l Xenomorph"])));
+    if (have$18($familiar(_templateObject9$3 || (_templateObject9$3 = _taggedTemplateLiteral(["Chest Mimic"])))) && get$2("_mimicEggsObtained") !== 11) return $familiar(_templateObject0$3 || (_templateObject0$3 = _taggedTemplateLiteral(["Chest Mimic"])));
     return $familiar(_templateObject1$3 || (_templateObject1$3 = _taggedTemplateLiteral(["Mini Kiwi"])));
 
     // if (have($familiar`Peace Turkey`)) return $familiar`Peace Turkey`;
