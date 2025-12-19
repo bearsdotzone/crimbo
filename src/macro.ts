@@ -123,13 +123,15 @@ export default class Macro extends StrictMacro {
     return this.externalIf(
       canOpenRedPresent() && myFamiliar() === $familiar`Crimbo Shrub`,
       Macro.trySkill($skill`Open a Big Red Present`),
-    ).externalIf(
-      timeToMeatify() && myFamiliar() === $familiar`Grey Goose`,
-      Macro.trySkill($skill`Meatify Matter`),
-    ).externalIf(
-      myFamiliar() === $familiar`Chest Mimic`,
-      Macro.tryHaveSkill($skill`%fn, lay an egg`),
-    );
+    )
+      .externalIf(
+        timeToMeatify() && myFamiliar() === $familiar`Grey Goose`,
+        Macro.trySkill($skill`Meatify Matter`),
+      )
+      .externalIf(
+        myFamiliar() === $familiar`Chest Mimic`,
+        Macro.tryHaveSkill($skill`%fn, lay an egg`),
+      );
   }
 
   static familiarActions(): Macro {
